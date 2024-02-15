@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Login Form</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://img.freepik.com/premium-photo/medical-science-concept_488220-38439.jpg?w=996");
+        background-size: cover;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: #555;
+      }
+
+      input {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #4caf50;
+      }
+
+      a.button {
+        display: block;
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+      }
+
+      a.button:hover {
+        background-color: #45a049;
+      }
+
+      #signupLink {
+        color: #4caf50;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="loginForm" action="index.html" method="post">
+        <h2>Login</h2>
+        <label for="username"
+          >Username:
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Your Username"
+            required
+          />
+        </label>
+
+        <label for="password"
+          >Password:
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Your Password"
+            required
+          />
+        </label>
+
+        <a
+          href="javascript:void(0)"
+          class="button"
+          onclick="showSuccessMessage()"
+          >Log In</a
+        >
+      </form>
+
+      <p>
+        Don't have an account? <a id="signupLink" href="signup.html">Sign Up</a>
+      </p>
+    </div>
+
+    <script>
+      function showSuccessMessage() {
+        alert("You have successfully logged in. Welcome to the page!");
+        // Optionally, you can redirect the user to another page after showing the alert
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

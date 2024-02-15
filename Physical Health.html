@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Wellness</title>
+    <link rel="stylesheet" href="Physical Health.css" />
+    <!-- Google Fonts Links For Icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="logo" href="#">Welcome<span>!</span></a>
+        <ul class="menu-links">
+          <span id="close-menu-btn" class="material-symbols-outlined"
+            >close</span
+          >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Highlight.html">Highlight</a></li>
+          <li><a href="Physical Health.html">Physical</a></li>
+          <li><a href="Mental Well-Being.html">Mental</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="events.html">Media</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="sub.html">Subscribe</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="Login.html">Login</a></li>
+        </ul>
+        <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+      </nav>
+    </header>
+
+    <div class="text">
+      <h2>Physical Health</h2>
+      <p>
+        Physical health is the foundation for a vibrant and fulfilling life,<br />
+        enabling us to engage fully in daily activities, maintain overall
+        well-being, and build resilience against various health challenges
+      </p>
+    </div>
+
+    <div class="box">
+      <img src="Image/ph1.jpg" alt="" height="800" width="600" />
+      <div class="box1">
+        <img src="Image/ph2.jpg" alt="" height="800" width="600" />
+      </div>
+      <img src="Image/ph3.jpg" alt="" height="800" width="600" />
+    </div>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+              Copyright &copy; 2023 All Rights Reserved by Budriz
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector("header");
+      const hamburgerBtn = document.querySelector("#hamburger-btn");
+      const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+      // Toggle mobile menu on hamburger button click
+      hamburgerBtn.addEventListener("click", () =>
+        header.classList.toggle("show-mobile-menu")
+      );
+
+      // Close mobile menu on close button click
+      closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+    </script>
+  </body>
+</html>

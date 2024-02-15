@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Feedback Form</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://techcrunch.com/wp-content/uploads/2015/04/feedback.jpg?w=1390&crop=1");
+        background-size: cover;
+        background-size: 100% 100%;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: #555;
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #4caf50;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      /* Stylish Popup */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 900;
+      }
+
+      .top-left-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4caf50;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="top-left-button">Back to Home</a>
+    <div class="container">
+      <form id="feedbackForm">
+        <h2>Feedback Form</h2>
+        <label for="name"
+          >Name:
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+        </label>
+
+        <label for="email"
+          >Email:
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+        </label>
+
+        <label for="feedbackType"
+          >Feedback Type:
+          <select id="feedbackType" name="feedbackType" required>
+            <option value="compliment">Compliment</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="issue">Issue</option>
+          </select>
+        </label>
+
+        <label for="comments"
+          >Comments:
+          <textarea
+            id="comments"
+            name="comments"
+            placeholder="Your Comments"
+            rows="4"
+            required
+          ></textarea>
+        </label>
+
+        <button type="button" onclick="showPopup()">Submit Feedback</button>
+
+        <!-- Stylish Popup -->
+        <div class="overlay" id="overlay"></div>
+        <div class="popup" id="popup">
+          <p>Thank you for your feedback!</p>
+          <button type="button" onclick="hidePopup()">Close</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function submitFeedback() {
+        // Mock submission for demonstration
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const feedbackType = document.getElementById("feedbackType").value;
+        const comments = document.getElementById("comments").value;
+
+        // Display the stylish popup
+        showPopup();
+
+        // Optionally, you can reset the form after submission
+        document.getElementById("feedbackForm").reset();
+      }
+
+      function showPopup() {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("popup").style.display = "block";
+      }
+
+      function hidePopup() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("popup").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

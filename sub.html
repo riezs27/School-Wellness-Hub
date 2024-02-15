@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://www.unite.ai/wp-content/uploads/2021/11/doctor-6676747_1280.jpg");
+        background-size: cover;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative; /* Added positioning for the button */
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #555;
+      }
+
+      input {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #confirmationMessage {
+        margin-top: 20px;
+        color: #4caf50;
+        font-weight: bold;
+      }
+
+      /* Styling for the button link */
+      .top-left-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4caf50;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+    <title>Subscribe to Our Newsletter</title>
+  </head>
+  <body>
+    <a href="index.html" class="top-left-button">Back to Home</a>
+    <div class="container">
+      <!-- Button link at the top-left corner -->
+
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Stay updated on new content and receive exclusive offers!</p>
+      <form id="subscriptionForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Your Email" required />
+
+        <button type="button" onclick="subscribe()">Subscribe</button>
+      </form>
+      <p id="confirmationMessage"></p>
+    </div>
+
+    <script>
+      function subscribe() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const confirmationMessage = document.getElementById(
+          "confirmationMessage"
+        );
+
+        if (name === "" || email === "") {
+          alert("All fields must be filled in.");
+          return;
+        }
+
+        // Perform further actions like sending the data to the server, etc.
+        // For now, just display a confirmation message
+        confirmationMessage.textContent = `Thank you, ${name}! You have successfully subscribed to our newsletter.`;
+
+        // You might want to reset the form after a successful subscription
+        document.getElementById("subscriptionForm").reset();
+      }
+    </script>
+  </body>
+</html>

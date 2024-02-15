@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Wellness</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts Links For Icon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a class="logo" href="#">Welcome<span>!</span></a>
+        <ul class="menu-links">
+          <span id="close-menu-btn" class="material-symbols-outlined"
+            >close</span
+          >
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Highlight.html">Highlight</a></li>
+          <li><a href="Physical Health.html">Physical</a></li>
+          <li><a href="Mental Well-Being.html">Mental</a></li>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="events.html">Media</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="sub.html">Subscribe</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="Login.html">Login</a></li>
+        </ul>
+        <span id="hamburger-btn" class="material-symbols-outlined">menu</span>
+      </nav>
+    </header>
+
+    <section class="hero-section">
+      <div class="content">
+        <div class="gmbr"></div>
+        <h2>School Wellness Hub</h2>
+        <p>
+          We are thrilled to extend a warm welcome to you at our School Wellness
+          Hub, a place dedicated to fostering a healthy, supportive, and vibrant
+          learning environment. We believe in the holistic well-being of every
+          individual within our school community. Our mission is to provide
+          resources, support, and a nurturing space where students can thrive
+          not only academically but also emotionally and socially.
+        </p>
+        <button type="button" onclick="location.href='#A1'">Click Here</button>
+      </div>
+    </section>
+
+    <br />
+    <h2 style="text-align: center">Let's watch the video !</h2>
+
+    <center>
+      <iframe
+        id="A1"
+        width="820"
+        height="445"
+        src="https://www.youtube.com/embed/Cg_GW7yhq20"
+      >
+      </iframe>
+    </center>
+
+    <div class="container">
+      <div class="card">
+        <div class="b">1. Interactive Workshops</div>
+        <ul>
+          <li>
+            Engage in hands-on learning through interactive workshops led by
+            experts in the field. These workshops cover a range of topics, from
+            mindfulness practices to stress management techniques, providing
+            practical tools for immediate application.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="b">2. Mindfulness Modules</div>
+        <ul>
+          <li>
+            Immerse yourself in mindfulness with our newly added modules. The
+            art of meditation, deep breathing exercises, and mindfulness
+            practices to enhance focus, reduce anxiety, and promote overall
+            mental well-being.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="b">3. Wellness Challenges</div>
+        <ul>
+          <li>
+            Embark on wellness challenges designed to make healthy living fun
+            and achievable. Fitness challenges to nutrition goals, these
+            activities encourage a sense of camaraderie and motivation among
+            students, parents, and educators.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="b">4. Resource Library Expansion</div>
+        <ul>
+          <li>
+            Explore an enriched resource library featuring the latest articles,
+            videos, and guides on diverse wellness topics. Stay informed about
+            the latest research, trends, and expert insights in the fields of
+            physical and mental health.
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="b">5. Wellness Events Calendar</div>
+        <ul>
+          <li>
+            Stay up-to-date with upcoming wellness events, seminars, and
+            awareness campaigns. Our events calendar ensures you never miss an
+            opportunity to participate in activities that contribute to your
+            overall well-being.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">
+              Copyright &copy; 2023 All Rights Reserved by Budriz
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.querySelector("header");
+      const hamburgerBtn = document.querySelector("#hamburger-btn");
+      const closeMenuBtn = document.querySelector("#close-menu-btn");
+
+      // Toggle mobile menu on hamburger button click
+      hamburgerBtn.addEventListener("click", () =>
+        header.classList.toggle("show-mobile-menu")
+      );
+
+      // Close mobile menu on close button click
+      closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+    </script>
+  </body>
+</html>

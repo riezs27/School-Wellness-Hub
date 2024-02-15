@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Sign Up and Login</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://img.freepik.com/premium-photo/medical-science-concept_488220-38439.jpg?w=996");
+        background-size: cover;
+        background-size: 100% 100%;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        box-sizing: border-box;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: #555;
+      }
+
+      input,
+      select {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #4caf50;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #showPasswordContainer {
+        display: flex;
+        align-items: center;
+        color: #555;
+      }
+
+      #showPassword {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      #loginLink {
+        color: #4caf50;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form id="signupForm">
+        <h2>Sign Up</h2>
+        <label for="name"
+          >Name:
+          <input type="text" id="name" placeholder="Your Name" required />
+        </label>
+
+        <label for="age"
+          >Age:
+          <input type="number" id="age" placeholder="Your Age" required />
+        </label>
+
+        <label for="gender"
+          >Gender:
+          <select id="gender" required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+
+        <label for="email"
+          >Email:
+          <input type="email" id="email" placeholder="Your Email" required />
+        </label>
+
+        <label for="password"
+          >Password:
+          <input
+            type="password"
+            id="password"
+            placeholder="Your Password"
+            required
+          />
+        </label>
+
+        <label for="confirmPassword"
+          >Confirm Password:
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+        </label>
+
+        <div id="showPasswordContainer">
+          <input type="checkbox" id="showPassword" onclick="togglePassword()" />
+          <label for="showPassword">Show Password</label>
+        </div>
+
+        <p>
+          Already have an account?
+          <a id="loginLink" href="Login.html">Login Here!</a>
+        </p>
+        <button type="button" onclick="validateSignup()">Sign Up</button>
+      </form>
+    </div>
+
+    <script>
+      function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const confirmPasswordField = document.getElementById("confirmPassword");
+        const showPasswordCheckbox = document.getElementById("showPassword");
+
+        if (showPasswordCheckbox.checked) {
+          passwordField.type = "text";
+          confirmPasswordField.type = "text";
+        } else {
+          passwordField.type = "password";
+          confirmPasswordField.type = "password";
+        }
+      }
+
+      function validateSignup() {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const gender = document.getElementById("gender").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (
+          name === "" ||
+          age === "" ||
+          gender === "" ||
+          email === "" ||
+          password === "" ||
+          confirmPassword === ""
+        ) {
+          alert("All fields must be filled in.");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match.");
+          return;
+        }
+
+        // Perform further validation or submit the form
+        // For now, just alert a success message
+        alert("Sign up successful!");
+      }
+    </script>
+  </body>
+</html>
